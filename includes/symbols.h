@@ -22,7 +22,7 @@ class Symbols {
 	friend std::ostream&operator<<(std::ostream& , const Symbols& );
 	friend bool operator<(const Symbols& , const Symbols& );
 	Symbols operator=(std::string c2);
-
+	friend bool operator==(std::string , const Symbols& );
  private:
  	std::string symbol_;
 };

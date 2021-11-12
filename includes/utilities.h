@@ -15,3 +15,4 @@
 
 #include "alphabet.h"
 #include "chain.h"
+#include "nfa.h"

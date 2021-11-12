@@ -64,3 +64,5 @@ bool operator<(const Symbols& sym1, const Symbols& sym2) {
  */
 Symbols Symbols::operator=(std::string c2) { return symbol_ = c2; }
 
+bool operator==(std::string mystr_symbol, const Symbols& my_sym) { return mystr_symbol == my_sym.symbol_; }
+

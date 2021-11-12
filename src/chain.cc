@@ -70,4 +70,4 @@ bool operator<(const Chain& chain1, const Chain& chain2) {
  *  @return string symbol.
  *
  */
-char Chain::get_chain_symbol(int i) { return str_[i]; }
+char Chain::get_chain_symbol(int i) const { return str_[i]; }
