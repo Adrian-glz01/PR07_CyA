@@ -8,11 +8,18 @@
 #ifndef SYMBOLS
 #define SYMBOLS
 
+#include <algorithm>
+#include <cstring>
+#include <functional>
 #include <iostream>
-#include <vector>
+#include <set>
 #include <string>
+#include <vector>
+#include <map>
+#include <regex>
 #include <fstream>
 #include <sstream>
+#include <unordered_set>
 
 class Symbols {
  public:

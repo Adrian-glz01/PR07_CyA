@@ -5,12 +5,18 @@
  * Práctica 7: Simulacion de NFAs
  */
 
-#include <fstream>
+#include <algorithm>
+#include <cstring>
+#include <functional>
 #include <iostream>
-#include <regex>
 #include <set>
 #include <string>
 #include <vector>
+#include <map>
+#include <regex>
+#include <fstream>
+#include <sstream>
+#include <unordered_set>
 
 class States {
  public:
@@ -20,7 +26,6 @@ class States {
   int get_type(void) const;
   bool operator<(States const& ) const;
   friend std::ostream&operator<<(std::ostream& ,  const States& );
-
  private:
   int states_;
   int type_;

@@ -8,9 +8,15 @@
 #ifndef CADENA
 #define CADENA
 
+#include <algorithm>
+#include <cstring>
+#include <functional>
 #include <iostream>
-#include <vector>
+#include <set>
 #include <string>
+#include <vector>
+#include <map>
+#include <regex>
 #include <fstream>
 #include <sstream>
 #include <unordered_set>
@@ -26,7 +32,6 @@ class Chain {
   friend std::ostream&operator<<(std::ostream& , const Chain&);
   friend bool operator<(const Chain&, const Chain&);
   char get_chain_symbol(int) const ;
-
  private:
   std::string str_;
 };

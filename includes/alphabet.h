@@ -8,12 +8,18 @@
 #ifndef ALPHABET
 #define ALPHABET
 
+#include <algorithm>
+#include <cstring>
+#include <functional>
 #include <iostream>
-#include <vector>
+#include <set>
 #include <string>
+#include <vector>
+#include <map>
+#include <regex>
 #include <fstream>
 #include <sstream>
-#include <set>
+#include <unordered_set>
 
 #include "symbols.h"
 

@@ -25,7 +25,7 @@ Symbols::Symbols(std::string Symbol) { symbol_ = Symbol; }
 /**
  *
  *  @brief  Get the value of a called symbol obj.
- *  @return symbol value.
+ *  @return Symbol value.
  *
  */
 std::string Symbols::get_symbols() const { return symbol_; }
@@ -59,10 +59,18 @@ bool operator<(const Symbols& sym1, const Symbols& sym2) {
  *
  *  @brief  Operator overloading for equal operator.
  *  @param  std::string string character.
- *  @return allows you to match a character of a string to a symbol of the class.
+ *  @return Allows you to match a character of a string to a symbol of the class.
  *
  */
 Symbols Symbols::operator=(std::string c2) { return symbol_ = c2; }
 
+/**
+ *
+ *  @brief  Operator overloading for boolean equal operator.
+ *  @param  std::string string character.
+ *  @param  const_Symbols& symbol object character
+ *  @return Compare if one sended string character is equal than the Symbols object character.
+ *
+ */
 bool operator==(std::string mystr_symbol, const Symbols& my_sym) { return mystr_symbol == my_sym.symbol_; }
 

@@ -5,10 +5,10 @@
  * Práctica 7: Simulacion de NFAs
  */
 
-#include "states.h"
 #include "chain.h"
 #include "alphabet.h"
 #include "symbols.h"
+#include "utilities.h"
 
 class Nfa {
  public:
