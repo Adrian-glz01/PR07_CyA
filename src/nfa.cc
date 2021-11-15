@@ -33,25 +33,24 @@ Nfa::Nfa(std::vector<States> states, Alphabet alphabet , int initial_state , std
  *
  */
 bool Nfa::verificate_chain(const Chain& mystr) {
+
   std::set<int> current_state = {initial_state_};
+
   for (int i = 0; i < mystr.size(); i++) {
     std::set<int> next_states = {};
     for (auto state: current_state) {
-      //std::cout << "ac: " << state;
       for (auto it = transitions_[state].begin(); it != transitions_[state].end(); it++) {
         if (std::string(1,mystr.get_chain_symbol(i)) == it->first) {
           next_states.insert(it->second);
-          //std::cout << "\n" << it->first<< " -> " << it->second;
+        } else if ("&" == it->first) {
+          transition_epsylon(it->second, mystr.get_chain_symbol(i), next_states);
         }
       }
     }
-    //std::cout << "\n";
     current_state = next_states;
-    
   }
   //intersection:
   std::set<int> states_intersection;
-  //std::set_intersection(current_state.begin(), current_state.end(), acceptation_states_.begin(), acceptation_states_.end(),std::inserter(states_intersection,states_intersection.begin()));
     for (const int &kCurrentState: current_state)
       for (const int &kAcceptanceState: acceptation_states_) {
         if (kCurrentState == kAcceptanceState) {
@@ -60,4 +59,22 @@ bool Nfa::verificate_chain(const Chain& mystr) {
       }
     if(states_intersection.size() > 0) return true;
     return false;
+}
+
+/**
+ *
+ *  @brief  Algorithm to evaluate the epsilon transitions that occur in the NFA.
+ *  @param  int state.
+ *  @param  char symbol
+ *  @param  std::set<int>& next_states
+ *
+ */
+void Nfa::transition_epsylon(int state, char symbol, std::set<int>& next_states) {
+  for (auto it = transitions_[state].begin(); it != transitions_[state].end(); it++) {
+    if (std::string(1,symbol) == it->first) {
+      next_states.insert(it->second);
+    } else if ("&" == it->first) {
+        transition_epsylon(it->second, symbol, next_states);
+    }
+  }
 }

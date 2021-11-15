@@ -14,6 +14,7 @@ class Nfa {
  public:
   Nfa(std::vector<States>, Alphabet, int, std::set<int>, std::vector<std::multimap<Symbols,int>>);
   bool verificate_chain(const Chain&);
+  void transition_epsylon(int, char, std::set<int>&);
  private:
   std::vector<States> states_;
   Alphabet alphabet_;
